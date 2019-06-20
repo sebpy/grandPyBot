@@ -1,0 +1,48 @@
+{% extends 'layouts/base.html' %}
+{% block body %}
+    <!--The menu is handled with a list of the pages-->
+   
+    <div class="container-fluid">
+    <!-- Chatbox-->
+    <div id="card" class="card">
+        <div class="row">
+            <div id="chatmsg" class="col-lg-offset-3 col-lg-6">
+                <div class="row">
+                    <div class='message bot'>Bonjour ! <br> 
+                        Je suis GrandPy bot, le papi robot ! Ou souhaite tu te rendre ? <br>
+                        Je peu te raconter l'histoire de ce lieu.
+                    </div>
+                </div>
+            </div>
+            <div id="wait_msg" class="col-lg-offset-3 col-lg-6">
+                    <div class="row">
+                    <div class='message bot' id='wait'>
+                        <i class="fa fa-spinner fa-pulse"></i>
+                        Merci de patienter, je réfléchis...
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- User input-->
+        <form id="chatform" class="form-horizontal" autocomplete="off">
+            <fieldset>
+                <div class="form-group">
+                  <div class="col-md-offset-3 col-md-6">
+                    <div class="input-group">
+                      <input id="user_message" name="user_message" required="required"
+                             oninvalid="this.setCustomValidity('Entrez un message.')"
+                             oninput="setCustomValidity('')"
+                             class="form-control" placeholder="Entrez votre message" type="text">
+                      <span class="input-group-btn"><button id="submit" class="btn btn-primary" type="submit">Envoyer</button></span>
+                    </div>
+                  </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    </div>
+
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+{% endblock %}

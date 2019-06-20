@@ -1,0 +1,14 @@
+{% extends 'layouts/default.html' %}
+<!--Active page is set for the menu-->
+{% set active_page = "about" %}
+{% block title %}A propos de {{ super()}}{% endblock %}
+{% block body %}
+<div class="container">
+        <h1>A propos</h1>
+        <p>GrandPy Bot est un projet effectué dans le cadre de la formation <a href="https://openclassrooms.com/fr/paths/68-developpeur-dapplication-python">OpenClassrooms Développeur d'applications
+           Python</a>.</p>
+        <p>Le but du projet est de créer un bot qui prend en entrée une phrase envoyée par l'utilisateur et qui requête
+            Google Maps et Wikipedia pour obtenir des informations sur le lieu et l'histoire du sujet évoqué.</p>
+        <p>Le code source du projet est disponible sur <a href="https://github.com/Cocomows/P7-GrandPy-Bot">GitHub</a>.</p>
+</div>
+{% endblock %}
