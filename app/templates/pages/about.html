@@ -1,4 +1,4 @@
-{% extends 'layouts/default.html' %}
+{% extends 'layouts/base.html' %}
 <!--Active page is set for the menu-->
 {% set active_page = "about" %}
 {% block title %}A propos de {{ super()}}{% endblock %}
@@ -9,6 +9,6 @@
            Python</a>.</p>
         <p>Le but du projet est de créer un bot qui prend en entrée une phrase envoyée par l'utilisateur et qui requête
             Google Maps et Wikipedia pour obtenir des informations sur le lieu et l'histoire du sujet évoqué.</p>
-        <p>Le code source du projet est disponible sur <a href="https://github.com/Cocomows/P7-GrandPy-Bot">GitHub</a>.</p>
+        <p>Le code source du projet est disponible sur <a href="https://github.com/sebpy/grandPyBot">GitHub</a>.</p>
 </div>
 {% endblock %}
