@@ -55,6 +55,7 @@ class Answer:
         datas = {
                    'language': 'fr',
                    'inputtype': 'textquery',
+                   #'locationbias': 'point:47.523487,6.903804999',
                    'input': self.message_parsed,
                    'type': 'street_address',
                    'fields': 'formatted_address,geometry,name,pace_id',
@@ -85,5 +86,3 @@ class Answer:
             answer_wiki = 'Not found'
 
         return answer_wiki
-
-
