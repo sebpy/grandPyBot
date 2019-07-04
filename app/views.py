@@ -18,6 +18,7 @@ class Answer:
         self.user_post = user_msg
         self.message_parsed = self.parse_text()
         self.maps_answer = 'Not found'
+        self.maps_json = ''
         self.wiki_answer = 'Not found'
         self.name_place = 'Not found'
         self.address_place = 'Not found'
@@ -58,12 +59,13 @@ class Answer:
                    #'locationbias': 'point:47.523487,6.903804999',
                    'input': self.message_parsed,
                    'type': 'street_address',
-                   'fields': 'formatted_address,geometry,name,pace_id',
+                   'fields': 'formatted_address,geometry,name,place_id',
                    'key': API_KEY_MAPS
                    }
         response = requests.get(search_coordonate, params=datas)
         result = json.loads(response.text)
 
+        self.maps_json = result
         if result['status'] != "ZERO_RESULT":
             try:
                 self.name_place = result['candidates'][0]['name']
