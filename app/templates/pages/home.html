@@ -3,14 +3,15 @@
     <!--The menu is handled with a list of the pages-->
    
     <div class="container-fluid">
-    <!-- Chatbox-->
-    <div id="card" class="card">
+    <!-- Shoutbox-->
+    <div id="shoutbox" class="shoutbox">
         <div class="row">
-            <div id="chatmsg" class="col-lg-offset-3 col-lg-6">
+            <div id="msg" class="col-lg-offset-3 col-lg-6">
                 <div class="row">
                     <div class='message bot'>Bonjour ! <br> 
                         Je suis GrandPy bot, le papi robot ! Ou souhaite tu te rendre ? <br>
-                        Je peu te raconter l'histoire de ce lieu.
+                        Je peu te raconter l'histoire de ce lieu.<br>
+                        Ex: GrandPy, ou ce trouve Etupes?
                     </div>
                 </div>
             </div>
@@ -25,12 +26,12 @@
         </div>
 
         <!-- User input-->
-        <form id="chatform" class="form-horizontal" autocomplete="off">
+        <form id="shoutform" class="form-horizontal" autocomplete="off">
             <fieldset>
                 <div class="form-group">
                   <div class="col-md-offset-3 col-md-6">
                     <div class="input-group">
-                      <input id="user_message" name="user_message" required="required"
+                      <input id="user_post" name="user_post" required="required"
                              oninvalid="this.setCustomValidity('Entrez un message.')"
                              oninput="setCustomValidity('')"
                              class="form-control" placeholder="Entrez votre message" type="text">
