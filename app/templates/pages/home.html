@@ -32,10 +32,10 @@
                   <div class="col-md-offset-3 col-md-6">
                     <div class="input-group">
                       <input id="user_post" name="user_post" required="required"
-                             oninvalid="this.setCustomValidity('Entrez un message.')"
-                             oninput="setCustomValidity('')"
                              class="form-control" placeholder="Entrez votre message" type="text">
-                      <span class="input-group-btn"><button id="submit" class="btn btn-primary" type="submit">Envoyer</button></span>
+                      <span class="input-group-btn">
+                          <input type="submit" id="go" class="form-control" value="Envoyer">
+                      </span>
                     </div>
                   </div>
                 </div>

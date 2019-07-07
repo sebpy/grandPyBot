@@ -60,10 +60,11 @@ body {
 .shoutbox{
     border: 2px solid #dedede;
     background-color: #eef1f1;
+    margin-bottom:170px;
 }
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -71,6 +72,7 @@ body {
   line-height: 20px; /* Vertically center the text there */
   background-color: #424242;
   color: white;
+  z-index: 1000;
 }
 
 .message {

@@ -19,7 +19,7 @@ class Answer:
         self.message_parsed = self.parse_text()
         self.maps_answer = 'Not found'
         self.maps_json = ''
-        self.wiki_answer = 'Not found'
+        self.answer_wiki = 'Je n\'ai pas compris la demande ou je ne connais pas d\'histoire sur ce lieu.'
         self.name_place = 'Not found'
         self.address_place = 'Not found'
 
@@ -56,7 +56,7 @@ class Answer:
         datas = {
                    'language': 'fr',
                    'inputtype': 'textquery',
-                   #'locationbias': 'point:47.523487,6.903804999',
+                   'locationbias': 'point:47.523487,6.903804999',
                    'input': self.message_parsed,
                    'type': 'street_address',
                    'fields': 'formatted_address,geometry,name,place_id',
@@ -83,8 +83,8 @@ class Answer:
 
         wikipedia.set_lang("fr")
         try:
-            answer_wiki = wikipedia.summary(self.message_parsed)
+            self.answer_wiki = wikipedia.summary(self.message_parsed)
         except wikipedia.exceptions.PageError:
-            answer_wiki = 'Not found'
+            self.answer_wiki = 'Not found'
 
-        return answer_wiki
+        return self.answer_wiki
