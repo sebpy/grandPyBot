@@ -18,10 +18,12 @@ class Answer:
         self.user_post = user_msg
         self.message_parsed = self.parse_text()
         self.maps_answer = 'Not found'
-        self.maps_json = ''
+        self.answer_map = ''
         self.answer_wiki = 'Je n\'ai pas compris la demande ou je ne connais pas d\'histoire sur ce lieu.'
         self.name_place = 'Not found'
         self.address_place = 'Not found'
+        self.lat = 47.5070089
+        self.lon = 6.862954
 
         if self.message_parsed != "":
             self.maps_answer = self.get_maps()
@@ -65,11 +67,18 @@ class Answer:
         response = requests.get(search_coordonate, params=datas)
         result = json.loads(response.text)
 
-        self.maps_json = result
+        self.answer_map = result
+
         if result['status'] != "ZERO_RESULT":
             try:
                 self.name_place = result['candidates'][0]['name']
                 self.address_place = result['candidates'][0]['formatted_address']
+                self.lat = result['candidates'][0]['geometry']['location']['lat']
+                self.lon = result['candidates'][0]['geometry']['location']['lng']
+
+                data_map = self.name_place, self.address_place, self.lat, self.lon
+                print(data_map)
+
             except IndexError:
                 return 'No result'
             return 200

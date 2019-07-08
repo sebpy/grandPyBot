@@ -1,14 +1,13 @@
 {% extends 'layouts/base.html' %}
 {% block body %}
     <!--The menu is handled with a list of the pages-->
-   
     <div class="container-fluid">
     <!-- Shoutbox-->
     <div id="shoutbox" class="shoutbox">
         <div class="row">
             <div id="msg" class="col-lg-offset-3 col-lg-6">
                 <div class="row">
-                    <div class='message bot'>Bonjour ! <br> 
+                    <div class='message bot'>Bonjour ! <br>
                         Je suis GrandPy bot, le papi robot ! Ou souhaite tu te rendre ? <br>
                         Je peu te raconter l'histoire de ce lieu.<br>
                         Ex: GrandPy, ou ce trouve Etupes?
@@ -43,7 +42,5 @@
         </form>
     </div>
     </div>
-
-<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 {% endblock %}
