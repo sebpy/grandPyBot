@@ -7,11 +7,11 @@ wait.hide();
 user_post.focus();
 
 //var api_gmap = URL_API_GMAPS // à verifier
-function initMaps(lat, lng, name) {
+function initMaps(lat, lng, name, place_id) {
 
     var myLatLng = {lat: lat, lng: lng};
 
-    var map = new google.maps.Map(document.getElementById('map_id'), {
+    var map = new google.maps.Map(document.getElementById(place_id), {
         zoom: 15,
         center: myLatLng,
         disableDefaultUI: true
@@ -43,11 +43,13 @@ shoutform.on('submit', function(e) {
                     var lat = reply['map_reply']['candidates'][0]['geometry']['location']['lat'];
                     var lng = reply['map_reply']['candidates'][0]['geometry']['location']['lng'];
                     var name = reply['map_reply']['candidates'][0]['name'];
+                    var place_id = reply['map_reply']['candidates'][0]['place_id'];
+
                     $("<div class='row'><div class='message bot'>" +
-                      "<div id='map_id'></div>" +
+                      "<div class='map' id='"+ place_id + "'></div>" +
                       "</div></div>").hide().appendTo(shb_msg).show('slow');
 
-                    initMaps(lat, lng, name)
+                    initMaps(lat, lng, name, place_id)
 
                     // Wikipedia api reply
                     if (reply['wiki_reply'] != ""){
