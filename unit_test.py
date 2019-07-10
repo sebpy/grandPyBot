@@ -17,8 +17,8 @@ def test_parse_text():
 def test_get_coordonates():
     bot_answer = Answer("Etupes")
     assert bot_answer.maps_answer == 200
-    assert bot_answer.maps_json['candidates'][0]['geometry']['location']['lat'] == 47.5070089
-    assert bot_answer.maps_json['candidates'][0]['geometry']['location']['lng'] == 6.862954
+    assert bot_answer.answer_map['candidates'][0]['geometry']['location']['lat'] == 47.5070089
+    assert bot_answer.answer_map['candidates'][0]['geometry']['location']['lng'] == 6.862954
 
 
 def test_wiki_infos():

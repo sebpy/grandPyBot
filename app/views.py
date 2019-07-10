@@ -76,9 +76,6 @@ class Answer:
                 self.lat = result['candidates'][0]['geometry']['location']['lat']
                 self.lon = result['candidates'][0]['geometry']['location']['lng']
 
-                data_map = self.name_place, self.address_place, self.lat, self.lon
-                print(data_map)
-
             except IndexError:
                 return 'No result'
             return 200
