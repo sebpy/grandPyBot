@@ -5,3 +5,4 @@ requests
 selenium
 splinter
 wikipedia
+gunicorn

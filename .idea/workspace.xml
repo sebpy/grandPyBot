@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c3258db-9070-44c9-aa04-5fc639b63bf1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-    </list>
+    <list default="true" id="3c3258db-9070-44c9-aa04-5fc639b63bf1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,19 +14,10 @@
         <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="720">
-              <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
+              <caret line="78" column="30" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
               <folding>
                 <element signature="e#85#96#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/layouts/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -44,13 +31,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/unit_test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -84,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/tests/test_functional.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+              <caret column="21" selection-start-column="21" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -93,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -151,7 +143,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-1" />
     <option name="y" value="-1" />
     <option name="width" value="1916" />
@@ -170,39 +162,6 @@
             <path>
               <item name="grandPyBot" type="b2602c69:ProjectViewProjectNode" />
               <item name="grandPyBot" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="grandPyBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grandPyBot" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="grandPyBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grandPyBot" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="grandPyBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grandPyBot" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="grandPyBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grandPyBot" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-              <item name="partials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="grandPyBot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="grandPyBot" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="grandPyBot" type="b2602c69:ProjectViewProjectNode" />
@@ -484,14 +443,14 @@
     <entry file="file://$PROJECT_DIR$/tests/test_functional.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
@@ -505,7 +464,7 @@
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
-          <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
+          <caret line="78" column="30" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
           <folding>
             <element signature="e#85#96#0" expanded="true" />
           </folding>
@@ -529,9 +488,12 @@
     <entry file="file://$PROJECT_DIR$/unit_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
