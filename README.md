@@ -9,4 +9,5 @@ topic entered by the user and display a gmap map and the story of the subject.
 To use the local version of the code :
 Install the required python packages with `pip install -r requirements.txt`
 Edit `config.py` and add your Google Maps API key between "".
+
 Run the `run.py` file.

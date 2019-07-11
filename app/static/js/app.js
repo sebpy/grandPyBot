@@ -26,6 +26,7 @@ function initMaps(lat, lng, name, place_id) {
 
 shoutform.on('submit', function(e) {
     e.preventDefault();
+    wait.show();
     var text = user_post.val();
     if(text != ""){
         $.ajax({
@@ -34,6 +35,7 @@ shoutform.on('submit', function(e) {
             data: $('form').serialize(),
 
             success: function (reply) {
+                wait.hide();
                 var input = $("<div>").text(text).html();
 
                 if (input != '') {
