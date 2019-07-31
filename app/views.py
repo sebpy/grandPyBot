@@ -17,9 +17,9 @@ class Answer:
     def __init__(self, user_msg):
         self.user_post = user_msg
         self.message_parsed = self.parse_text()
-        self.maps_answer = 'Not found'
+        self.maps_answer = "C'est embarrassant, je ne me rappel plus de de ce lieu..."
         self.answer_map = ''
-        self.answer_wiki = 'Je n\'ai pas compris la demande ou je ne connais pas d\'histoire sur ce lieu.'
+        self.answer_wiki = 'Ah bizarre, je ne sais rien à ce sujet...'
         self.name_place = 'Not found'
         self.address_place = 'Not found'
         self.lat = 47.5070089
@@ -27,7 +27,7 @@ class Answer:
 
         if self.message_parsed != "":
             self.maps_answer = self.get_maps()
-            self.wiki_answer = self.get_wikipedia()
+            self.answer_wiki = self.get_wikipedia()
 
     def parse_text(self):
         """Get message entering by user"""
@@ -77,20 +77,42 @@ class Answer:
                 self.lon = result['candidates'][0]['geometry']['location']['lng']
 
             except IndexError:
-                return 'No result'
+                return "C'est embarrassant, je ne me rappel plus de de ce lieu..."
             return 200
         else:
-            return 'No result'
+            return "C'est embarrassant, je ne me rappel plus de de ce lieu...."
 
     def get_wikipedia(self):
         """ Get description of city
         https://fr.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&format=json&indexpageids=1&generator=search&gsrlimit=1&gsrsearch=ville%20etupes
         """
+        search_wiki = "https://fr.wikipedia.org/w/api.php"
+        datas = {
+                   'action': 'query',
+                   'prop': 'extracts',
+                   'explaintext': 1,
+                   'format': 'json',
+                   'indexpageids': 1,
+                   'exsentences': 4,
+                   'generator': 'search',
+                   'gsrlimit': '1',
+                   'gsrsearch': self.message_parsed,
+                }
 
-        wikipedia.set_lang("fr")
-        try:
-            self.answer_wiki = wikipedia.summary(self.message_parsed)
-        except wikipedia.exceptions.PageError:
-            self.answer_wiki = 'Not found'
+        response = requests.get(search_wiki, params=datas)
+        wiki_result = json.loads(response.text)
+
+        page_id = wiki_result['query']['pageids'][0]
+        short_desc = wiki_result['query']['pages'][page_id]['extract']
+        title_page = wiki_result['query']['pages'][page_id]['title']
+        link_wiki = 'https://fr.wikipedia.org/?curid=' + page_id
+        self.answer_wiki = short_desc + '<br><a href="' + link_wiki + '" title="' + \
+                           title_page + '" target="_blank">En savoir plus sur Wikipedia</a>'
+
+        #wikipedia.set_lang("fr")
+        #try:
+        #    self.answer_wiki = wikipedia.summary(self.message_parsed)
+        #except wikipedia.exceptions.PageError:
+        #    self.answer_wiki = 'Ah bizarre, je ne sais rien à ce sujet...'
 
         return self.answer_wiki
