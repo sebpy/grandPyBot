@@ -18,11 +18,6 @@ def index():
     return render_template('pages/home.html', urlapimap=URL_API_GMAPS)
 
 
-@app.route('/error')
-def error():
-    return render_template('errors/404.html')
-
-
 @app.route('/about')
 def about():
     return render_template('pages/about.html')
@@ -35,6 +30,6 @@ def answer():
     wiki_reply = bot_answer.answer_wiki
     map_reply = bot_answer.answer_map
     #print(bot_answer.answer_wiki)
-    print(bot_answer.answer_map)
+    #print(bot_answer.answer_map)
 
     return jsonify(wiki_reply=wiki_reply, map_reply=map_reply)
