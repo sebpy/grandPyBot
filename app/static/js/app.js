@@ -39,26 +39,32 @@ shoutform.on('submit', function(e) {
                 var input = $("<div>").text(text).html();
 
                 if (input != '') {
+
                     $("<div class='row'><div class='message' >" + input + "</div></div>").hide().appendTo(shb_msg).show('slow');
 
-                    // Google map api reply
-                    var lat = reply['map_reply']['candidates'][0]['geometry']['location']['lat'];
-                    var lng = reply['map_reply']['candidates'][0]['geometry']['location']['lng'];
-                    var name = reply['map_reply']['candidates'][0]['name'];
-                    var place_id = reply['map_reply']['candidates'][0]['place_id'];
+                    if (reply['map_reply'] != "error"){
+                        // Google map api reply
+                        var lat = reply['map_reply']['candidates'][0]['geometry']['location']['lat'];
+                        var lng = reply['map_reply']['candidates'][0]['geometry']['location']['lng'];
+                        var name = reply['map_reply']['candidates'][0]['name'];
+                        var place_id = reply['map_reply']['candidates'][0]['place_id'];
 
-                    $("<div class='row'><div class='message bot'>" +
-                      "<div class='map' id='"+ place_id + "'></div>" +
-                      "</div></div>").hide().appendTo(shb_msg).show('slow');
+                        $("<div class='row'><div class='message bot'>" +
+                          "<div class='map' id='"+ place_id + "'></div>" +
+                          "</div></div>").hide().appendTo(shb_msg).show('slow');
 
-                    initMaps(lat, lng, name, place_id)
+                        initMaps(lat, lng, name, place_id)
+                    }
+                    else {
+                        $("<div class='row'><div class='message bot'>C\'est embarrassant, je ne me rappel plus de ce lieu...</div></div>").hide().appendTo(shb_msg).show('slow');
+                    }
 
                     // Wikipedia api reply
-                    if (reply['wiki_reply'] != ""){
+                    if (reply['wiki_reply'] != "error"){
                         $("<div class='row'><div class='message bot'>" + reply['wiki_reply'] + "</div></div>").hide().appendTo(shb_msg).show('slow');
                     }
                     else {
-                        $("<div class='row'><div class='message bot'>Une erreur est survenue :(</div></div>").hide().appendTo(shb_msg).show('slow');
+                        $("<div class='row'><div class='message bot'>Ah bizarre, je ne sais rien à ce sujet... :(</div></div>").hide().appendTo(shb_msg).show('slow');
                     }
                 }
             }
