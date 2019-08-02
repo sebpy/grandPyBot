@@ -34,7 +34,7 @@ def answer():
     #print(bot_answer.user_post)
     wiki_reply = bot_answer.answer_wiki
     map_reply = bot_answer.answer_map
-    print(bot_answer.answer_wiki)
-    #print(bot_answer.answer_map)
+    #print(bot_answer.answer_wiki)
+    print(bot_answer.answer_map)
 
     return jsonify(wiki_reply=wiki_reply, map_reply=map_reply)

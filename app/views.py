@@ -7,7 +7,7 @@ import json
 import os
 import requests
 import re
-import wikipedia
+#import wikipedia
 from config import API_KEY_MAPS
 
 
@@ -24,6 +24,7 @@ class Answer:
         self.address_place = 'Not found'
         self.lat = 47.5070089
         self.lon = 6.862954
+        self.wiki_result_json = ''
 
         if self.message_parsed != "":
             self.maps_answer = self.get_maps()
@@ -90,6 +91,7 @@ class Answer:
         datas = {
                    'action': 'query',
                    'prop': 'extracts',
+                   'exintro': 1,
                    'explaintext': 1,
                    'format': 'json',
                    'indexpageids': 1,
@@ -100,19 +102,18 @@ class Answer:
                 }
 
         response = requests.get(search_wiki, params=datas)
-        wiki_result = json.loads(response.text)
+        self.wiki_result_json = json.loads(response.text)
 
-        page_id = wiki_result['query']['pageids'][0]
-        short_desc = wiki_result['query']['pages'][page_id]['extract']
-        title_page = wiki_result['query']['pages'][page_id]['title']
-        link_wiki = 'https://fr.wikipedia.org/?curid=' + page_id
-        self.answer_wiki = short_desc + '<br><a href="' + link_wiki + '" title="' + \
-                           title_page + '" target="_blank">En savoir plus sur Wikipedia</a>'
+        try:
+            page_id = self.wiki_result_json['query']['pageids'][0]
+            short_desc = self.wiki_result_json['query']['pages'][page_id]['extract']
+            title_page = self.wiki_result_json['query']['pages'][page_id]['title']
+            link_wiki = 'https://fr.wikipedia.org/?curid=' + page_id
+            self.answer_wiki = short_desc + '<br><a href="' + link_wiki + '" title="' + \
+                               title_page + '" target="_blank">En savoir plus sur Wikipedia</a>'
+        except KeyError:
 
-        #wikipedia.set_lang("fr")
-        #try:
-        #    self.answer_wiki = wikipedia.summary(self.message_parsed)
-        #except wikipedia.exceptions.PageError:
-        #    self.answer_wiki = 'Ah bizarre, je ne sais rien à ce sujet...'
+            self.answer_wiki = 'Ah bizarre, je ne sais rien à ce sujet...'
+
 
         return self.answer_wiki
