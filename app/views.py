@@ -8,6 +8,7 @@ import os
 import re
 import requests
 #import wikipedia
+import random as rd
 from config import API_KEY_MAPS
 
 
@@ -90,7 +91,7 @@ class Answer:
             'explaintext': 1,
             'format': 'json',
             'indexpageids': 1,
-            'exsentences': 4,
+            'exsentences': 3,
             'generator': 'search',
             'gsrlimit': '1',
             'gsrsearch': self.message_parsed,
@@ -99,12 +100,19 @@ class Answer:
         response = requests.get(search_wiki, params=datas)
         self.wiki_result_json = json.loads(response.text)
 
+        txt_bot = []
+        with open(os.path.dirname(os.path.abspath(__file__)) + '/bot_text.txt', 'r') as infile:
+            for line in infile:
+                txt_bot.append(line)
+
+        intro = rd.randint(0, len(txt_bot)-1)
+
         try:
             page_id = self.wiki_result_json['query']['pageids'][0]
             short_desc = self.wiki_result_json['query']['pages'][page_id]['extract']
             title_page = self.wiki_result_json['query']['pages'][page_id]['title']
             link_wiki = 'https://fr.wikipedia.org/?curid=' + page_id
-            self.answer_wiki = short_desc + '<br><a href="' + link_wiki + '" title="' + \
+            self.answer_wiki = txt_bot[intro] + '<br>' +short_desc + '<br><a href="' + link_wiki + '" title="' + \
                                title_page + '" target="_blank">En savoir plus sur Wikipedia</a>'
         except KeyError:
 

@@ -48,8 +48,10 @@ shoutform.on('submit', function(e) {
                         var lng = reply['map_reply']['candidates'][0]['geometry']['location']['lng'];
                         var name = reply['map_reply']['candidates'][0]['name'];
                         var place_id = reply['map_reply']['candidates'][0]['place_id'];
+                        var address = reply['map_reply']['candidates'][0]['formatted_address']
 
                         $("<div class='row'><div class='message bot'>" +
+                          "<span>Voici l'adresse que tu ma demandé petit padawan: " + address + '</span>' +
                           "<div class='map' id='"+ place_id + "'></div>" +
                           "</div></div>").hide().appendTo(shb_msg).show('slow');
 
