@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+# Test is ok
+
 from splinter import Browser
 
-URL = 'http://localhost:5000'
+URL = 'http://localhost:8080'
 
 
 def test_app():
